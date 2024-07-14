@@ -1,0 +1,49 @@
+<div 
+    data-js-component="RecentlyViewedCarousel"
+    data-js-props='{
+        "test": "test recently viewed"
+    }'>
+</div>
+
+<div 
+    data-js-component="TestComponent"
+    data-js-props='{
+        "test": "test test component"
+    }'
+></div>
+
+{% schema %}
+{
+    "name": "Recently Viewed",
+    "tag": "section",
+    "class": "section",
+    "presets": [
+        {
+            "name": "Recently Viewed"
+        }
+    ],
+    "settings": [
+        {
+            "type": "range",
+            "label": "Padding",
+            "id": "padding",
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "default": 10
+        },
+        {
+            "type": "color",
+            "label": "Background Color",
+            "id": "background_color",
+            "default": "#f0f0f0"
+        },
+        {
+            "type": "color",
+            "label": "Text Color",
+            "id": "text_color",
+            "default": "#333333"
+        }
+    ]
+}
+{% endschema %}
