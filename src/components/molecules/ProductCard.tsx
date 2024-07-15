@@ -34,7 +34,7 @@ export const ProductCard = ({
           </div>
           <AddToCartButton
             buttonBackgroundColor={buttonBackgroundColor}
-            variantId={variants[0]?.id}
+            variantId={variants && variants[0]?.id}
           />
         </div>
       </div>
