@@ -1,4 +1,3 @@
-import { useHandleRVData } from "../../hooks/useHandleRVData";
 import { ProductCardList } from "../organisms/ProductCardList";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -9,14 +8,16 @@ const RecentlyViewed = ({
   button_background_color,
   text_color,
   title,
+  rvData,
 }: {
   padding: string;
   button_background_color: string;
   text_color: string;
   title: string;
+  rvData: any;
 }) => {
-  const rvData = useHandleRVData();
-
+  // TODO: fix TypeError: Cannot read properties of null (reading 'useState')
+  // const rvData = useHandleRVData();
   return rvData.length ? (
     <div className="page-width-desktop">
       <h2 style={{ color: text_color }}>{title}</h2>
