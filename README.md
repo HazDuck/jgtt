@@ -16,6 +16,8 @@
 
 - Therefore to add new components, add each component into the vite.config.ts 'input' with a corresponding reactdom.createroot
 
+- Due to time constraints I've left some TS anys in the codebase, this is not best practice and should be fixed
+
 ---
 
 # React + TypeScript + Vite
