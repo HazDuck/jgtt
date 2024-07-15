@@ -32,7 +32,7 @@ export const useHandleRVData = () => {
               (rec: any) => !rvLsDataArr.find((item: any) => item.id === rec.id)
             );
 
-            if (recs.length === 0) {
+            if (recs.length === 0 || !recs[count]) {
               break;
             }
             const { id, title, media, handle, price, variants } = recs[count];

@@ -1,3 +1,4 @@
+// note: Shopify does not always pass back a sufficient number of recommendations to guarantee 4 product cards
 const getProductRecommendations = async (id: number, limit: number) => {
   const response = await fetch(
     window["Shopify"].routes.root +

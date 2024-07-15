@@ -15,8 +15,8 @@ export const ProductCard = ({
         <div className="card card--standard card--media">
           {/* @TODO: use srcset to get correct image size rather than always 400px */}
           <img
-            src={`${media[0].src}&_width=400`}
-            alt={media[0].alt}
+            src={`${media && media[0]?.src}&_width=400`}
+            alt={media && media[0]?.alt}
             className="motion-reduce"
             loading="lazy"
           />
@@ -34,7 +34,7 @@ export const ProductCard = ({
           </div>
           <AddToCartButton
             buttonBackgroundColor={buttonBackgroundColor}
-            variantId={variants[0].id}
+            variantId={variants[0]?.id}
           />
         </div>
       </div>
