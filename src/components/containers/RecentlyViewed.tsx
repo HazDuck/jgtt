@@ -1,26 +1,62 @@
+import { useEffect, useState } from "react";
+import getProductRecommendations from "../../utilities/getProductRecommendations";
+import { ProductCard } from "../molecules/ProductCard";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-declare global {
-  interface Window {
-    Shopify: any;
-  }
-}
 
+// @TODO: currently this will cause a CLS problem, fix it with a skeleton?
 const RecentlyViewed = () => {
-  const rvData = localStorage.getItem("jgRecentlyViewedData");
-  console.log(rvData, "rvData");
+  const [rvData, setRvData] = useState<any[]>([]);
 
-  const getProductRecommendations = async () => {
-    const response = await fetch(
-      window["Shopify"].routes.root +
-        "recommendations/products.json?product_id=9564517761316&limit=3&intent=related"
-    );
-    const data = await response.json();
-    console.log(data);
-  };
+  useEffect(() => {
+    const fetchProductRecommendations = async () => {
+      return await getProductRecommendations(9564517761316, 10);
+    };
 
-  getProductRecommendations();
+    const handleRVData = async () => {
+      const rvLsData = localStorage.getItem("jgRecentlyViewedData");
 
-  return <div>RecentlyViewed</div>;
+      if (rvLsData) {
+        const rvLsDataArr = Object.values(JSON.parse(rvLsData));
+
+        if (rvLsDataArr?.length < 4) {
+          const productRecs = await fetchProductRecommendations();
+          const combinedData = [...rvLsDataArr];
+          let count = 0;
+
+          while (combinedData.length < 4 && productRecs.products.length) {
+            const recs = productRecs.products.filter(
+              (rec: any) => !rvLsDataArr.find((item: any) => item.id === rec.id)
+            );
+
+            if (recs.length === 0) {
+              break;
+            }
+            const { id, title, price, featured_image } = recs[count];
+            const data = { id, title, price, featured_image };
+            combinedData.push(data);
+            count++;
+          }
+
+          setRvData(combinedData);
+        } else {
+          setRvData(rvLsDataArr);
+        }
+      }
+    };
+    handleRVData();
+  }, []);
+
+  return rvData.length ? (
+    <div className="page-width-desktop">
+      <h2>Recently Viewed</h2>
+      <ul className="grid product-grid contains-card contains-card--product contains-card--standard grid--4-col-desktop grid--2-col-tablet-down">
+        {rvData.map((product: any) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ul>
+    </div>
+  ) : null;
 };
 
 export default RecentlyViewed;
