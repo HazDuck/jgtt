@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import getProductRecommendations from "../../utilities/getProductRecommendations";
-import { ProductCard } from "../molecules/ProductCard";
+import { ProductCardList } from "../organisms/ProductCardList";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 // @TODO: currently this will cause a CLS problem, fix it with a skeleton?
-const RecentlyViewed = () => {
+const RecentlyViewed = ({
+  padding,
+  background_color,
+  text_color,
+  title,
+}: {
+  padding: string;
+  background_color: string;
+  text_color: string;
+  title: string;
+}) => {
   const [rvData, setRvData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -54,16 +64,13 @@ const RecentlyViewed = () => {
     handleRVData();
   }, []);
 
-  console.log(rvData, "rvData");
-
   return rvData.length ? (
-    <div className="page-width-desktop">
-      <h2>Recently Viewed</h2>
-      <ul className="grid product-grid contains-card contains-card--product contains-card--standard grid--4-col-desktop grid--2-col-tablet-down">
-        {rvData.map((product: any) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </ul>
+    <div
+      className="page-width-desktop"
+      style={{ backgroundColor: background_color }}
+    >
+      <h2 style={{ color: text_color }}>{title}</h2>
+      <ProductCardList padding={padding} rvData={rvData} />
     </div>
   ) : null;
 };

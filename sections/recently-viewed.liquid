@@ -1,22 +1,6 @@
-{% comment %} <div 
-    data-js-component="RecentlyViewedCarousel"
-    data-js-props='{
-        "test": "test recently viewed carousel"
-    }'>
-</div> {% endcomment %}
-
-{% comment %} <div 
-    data-js-component="TestComponent"
-    data-js-props='{
-        "test": "test test component"
-    }'
-></div> {% endcomment %}
-
 <div 
     data-js-component="RecentlyViewed"
-    data-js-props='{
-        "test": "test recently viewed"
-    }'>
+    data-js-props='{{ section.settings | json }}'>
 </div>
 
 {% schema %}
@@ -30,6 +14,12 @@
         }
     ],
     "settings": [
+        {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default": "Recently Viewed"
+        },
         {
             "type": "range",
             "label": "Padding",
