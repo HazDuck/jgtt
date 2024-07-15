@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../node_modules/swiper/swiper.min.css";
 
+// @TODO: didn't end up using this component, but it would be used to display recently viewed items in a carousel
+
 const RecentlyViewedCarousel = () => {
   return (
     <Swiper

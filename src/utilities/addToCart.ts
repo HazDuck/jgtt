@@ -25,9 +25,6 @@ const addToCart = async (variantId: number) => {
   };
 
   const response = await addToCartRequest();
-
-  console.log(response, "response");
-
   cartDrawer.renderContents(response);
 
   if (!response.ok) {

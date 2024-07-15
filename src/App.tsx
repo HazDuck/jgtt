@@ -1,20 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import ReactDOM from "react-dom";
 import { lazy, Suspense } from "react";
-
-type TComponent = {
-  // @TODO: remove any
-  [key: string]: any;
-};
+import { TComponent } from "./types/types";
 
 const App = () => {
   (() => {
-    // @TODO: move components to a separate file
-    //Components registry
+    // @TODO: move components to a registry file
     const components: TComponent = {
-      // RecentlyViewedCarousel: lazy(
-      //   () => import("./components/containers/RecentlyViewedCarousel")
-      // ),
       RecentlyViewed: lazy(
         () => import("./components/containers/RecentlyViewed")
       ),
@@ -42,11 +34,7 @@ const App = () => {
     }
   })();
 
-  return (
-    <div>
-      <p>AppLayer</p>
-    </div>
-  );
+  return null;
 };
 
 export default App;
