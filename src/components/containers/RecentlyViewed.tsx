@@ -19,18 +19,23 @@ const RecentlyViewed = ({
   const [rvData, setRvData] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchProductRecommendations = async () => {
-      return await getProductRecommendations(9564517761316, 10);
+    const fetchProductRecommendations = async (id: number, limit: number) => {
+      return await getProductRecommendations(id, limit);
     };
 
     const handleRVData = async () => {
       const rvLsData = localStorage.getItem("jgRecentlyViewedData");
 
       if (rvLsData) {
-        const rvLsDataArr = Object.values(JSON.parse(rvLsData));
+        const rvLsDataArr: { id: number }[] = Object.values(
+          JSON.parse(rvLsData)
+        );
 
         if (rvLsDataArr?.length < 4) {
-          const productRecs = await fetchProductRecommendations();
+          const productRecs = await fetchProductRecommendations(
+            rvLsDataArr[0].id,
+            10
+          );
           const combinedData = [...rvLsDataArr];
           let count = 0;
 
