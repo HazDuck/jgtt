@@ -254,10 +254,10 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {% comment %} @TODO - only include if required, also Swiper styles being brought in as part of npm package and cdn?{% endcomment %}
-    <link
+    {% comment %} <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    /> {% endcomment %}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
