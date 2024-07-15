@@ -6,6 +6,7 @@ import { useHandleRVData } from "./hooks/useHandleRVData";
 
 const App = () => {
   // @TODO: bumped into a vite error so passed this data in at the App level rather than in the RecentlyViewed component with more time would fix this
+  // see RecentlyViewed component for more info
   const rvData = useHandleRVData();
   ((rvData) => {
     // @TODO: move components to a registry file
