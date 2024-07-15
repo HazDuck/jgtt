@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import AddToCartButton from "../atoms/AddToCartButton";
 import { Price } from "../atoms/Price";
 
 export const ProductCard = ({
-  product: { id, featured_image, title, price },
+  product: { id, title, media, handle, price, variants },
 }: {
   product: any;
 }) => {
@@ -11,9 +12,10 @@ export const ProductCard = ({
       <div className="card-wrapper product-card-wrapper underline-links-hover">
         <div className="card card--standard card--media">
           {/* @TODO: use srcset to get correct image size rather than always 400px */}
+          <a href={`products/${handle}`}></a>
           <img
-            src={`${featured_image}&_width=400`}
-            alt={title}
+            src={`${media[0].src}&_width=400`}
+            alt={media[0].alt}
             className="motion-reduce"
             loading="lazy"
           />
@@ -27,6 +29,7 @@ export const ProductCard = ({
               </div>
             </div>
           </div>
+          <AddToCartButton variantId={variants[0].id} />
         </div>
       </div>
     </li>

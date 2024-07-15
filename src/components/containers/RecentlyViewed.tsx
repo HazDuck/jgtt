@@ -32,8 +32,15 @@ const RecentlyViewed = () => {
             if (recs.length === 0) {
               break;
             }
-            const { id, title, price, featured_image } = recs[count];
-            const data = { id, title, price, featured_image };
+            const { id, title, media, handle, price, variants } = recs[count];
+            const data = {
+              id,
+              title,
+              media,
+              handle,
+              price,
+              variants,
+            };
             combinedData.push(data);
             count++;
           }
@@ -46,6 +53,8 @@ const RecentlyViewed = () => {
     };
     handleRVData();
   }, []);
+
+  console.log(rvData, "rvData");
 
   return rvData.length ? (
     <div className="page-width-desktop">

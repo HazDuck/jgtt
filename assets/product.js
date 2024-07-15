@@ -4,13 +4,16 @@ const addProductToLocalStorage = () => {
   //get product data from the DOM
   const productData =
     document.querySelector("[data-product-data").dataset.productData;
-  const { id, title, price, featured_image } = JSON.parse(productData);
+  const { id, title, price, media, handle, variants } = JSON.parse(productData);
+  console.log(JSON.parse(productData), "productData");
 
   const data = {
     id,
     title,
-    featured_image,
+    media,
+    handle,
     price,
+    variants,
     time: Date.now(),
   };
 

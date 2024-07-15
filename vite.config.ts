@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         app: "src/main.tsx",
-        addToCartButton: "src/addToCartButton/main.tsx",
       },
       output: {
         dir: "assets",

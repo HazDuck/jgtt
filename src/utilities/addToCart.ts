@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-const addToCart = async (variantId: any, productTitle: any) => {
+const addToCart = async (variantId: number) => {
   const cartDrawer: any = document.querySelector("cart-drawer");
 
   const addToCartRequest = async () => {
@@ -26,10 +26,12 @@ const addToCart = async (variantId: any, productTitle: any) => {
 
   const response = await addToCartRequest();
 
+  console.log(response, "response");
+
   cartDrawer.renderContents(response);
 
   if (!response.ok) {
-    console.log(`something went wrong adding ${productTitle} to cart`);
+    console.log(`something went wrong adding to cart`);
   }
 };
 
