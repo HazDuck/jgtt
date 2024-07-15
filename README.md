@@ -10,13 +10,11 @@
 
 ## Dev notes
 
-- npm run build and shopify theme dev -e development in two separate terminals
+- npm run build and shopify theme dev -e development in two separate terminal windows
 
-- To add a new component on the site add an element of data-js-component=‘component name’ and data-js-props=‘json of props’.
+- Unfortunately I bumped into a Vite issue that I don’t have time to fix so wasn't able to dynamically import components - see wip commented out in App.tsx.
 
-- Then in App.tsx import the component into the components obj
-
-- Unfortunately I bumped into a Vite issue that I don’t have time to fix so the above won’t work until that is resolved.
+- Therefore to add new components, add each component into the vite.config.ts 'input' with a corresponding reactdom.createroot
 
 ---
 

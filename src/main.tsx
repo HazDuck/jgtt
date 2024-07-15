@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const el = document.querySelector("[data-js-component='RecentlyViewed']");
+const data = (el as HTMLElement)?.dataset.jsProps as string;
+const obj = JSON.parse(data);
+
+ReactDOM.createRoot(el!).render(
   <React.StrictMode>
-    {/* @TODO: could wrap App in Provider here */}
-    <App />
+    <App {...obj} />
   </React.StrictMode>
 );
