@@ -1,11 +1,2 @@
 <div id="root"></div>
-
-{% comment %} 
-    {% if template.name == 'product' %}
-        <div id="add-to-cart-button" data-variant-id="{{ product.first_available_variant.id }}" data-product-title="{{ product.title }}"></div>
-        <script type="module" src="{{ 'vite-addToCartButton.js' | asset_url }}" defer></script>
-    {% endif %} 
- {% endcomment %}
-
-{% comment %}vite-client.js can be removed{% endcomment %}
 <script type="module" src="{{ 'vite-app.js' | asset_url }}" defer></script>

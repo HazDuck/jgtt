@@ -12,13 +12,12 @@ const App = () => {
     // @TODO: move components to a separate file
     //Components registry
     const components: TComponent = {
-      RecentlyViewedCarousel: lazy(
-        () => import("./components/containers/RecentlyViewedCarousel")
-      ),
+      // RecentlyViewedCarousel: lazy(
+      //   () => import("./components/containers/RecentlyViewedCarousel")
+      // ),
       RecentlyViewed: lazy(
         () => import("./components/containers/RecentlyViewed")
       ),
-      TestComponent: lazy(() => import("./components/atoms/TestComponent")),
     };
 
     // Find all elements with data-js-component attribute & render in DOM with props passed from data-attribute
