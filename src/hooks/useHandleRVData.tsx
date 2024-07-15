@@ -14,8 +14,9 @@ export const useHandleRVData = () => {
       const rvLsData = localStorage.getItem("jgRecentlyViewedData");
 
       if (rvLsData) {
-        const rvLsDataArr: { id: number }[] = Object.values(
-          JSON.parse(rvLsData)
+        let rvLsDataArr: any[] = Object.values(JSON.parse(rvLsData));
+        rvLsDataArr = rvLsDataArr.sort(
+          (a: { time: number }, b: { time: number }) => b.time - a.time
         );
 
         if (rvLsDataArr?.length < 4) {
@@ -23,7 +24,7 @@ export const useHandleRVData = () => {
             rvLsDataArr[0].id,
             10
           );
-          const combinedData = [...rvLsDataArr];
+          const combinedData = [...rvLsDataArr.sort((a, b) => b.time - a.time)];
           let count = 0;
 
           while (combinedData.length < 4 && productRecs.products.length) {
