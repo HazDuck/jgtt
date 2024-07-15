@@ -8,24 +8,25 @@ import { ProductCardList } from "../organisms/ProductCardList";
 // @TODO: currently this will cause a CLS problem, fix it with a skeleton?
 const RecentlyViewed = ({
   padding,
-  background_color,
+  button_background_color,
   text_color,
   title,
 }: {
   padding: string;
-  background_color: string;
+  button_background_color: string;
   text_color: string;
   title: string;
 }) => {
   const rvData = useHandleRVData();
 
   return rvData.length ? (
-    <div
-      className="page-width-desktop"
-      style={{ backgroundColor: background_color }}
-    >
+    <div className="page-width-desktop">
       <h2 style={{ color: text_color }}>{title}</h2>
-      <ProductCardList padding={padding} rvData={rvData} />
+      <ProductCardList
+        buttonBackgroundColor={button_background_color}
+        padding={padding}
+        rvData={rvData}
+      />
     </div>
   ) : null;
 };
