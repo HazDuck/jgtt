@@ -15,6 +15,9 @@ const App = () => {
       RecentlyViewedCarousel: lazy(
         () => import("./components/containers/RecentlyViewedCarousel")
       ),
+      RecentlyViewed: lazy(
+        () => import("./components/containers/RecentlyViewed")
+      ),
       TestComponent: lazy(() => import("./components/atoms/TestComponent")),
     };
 

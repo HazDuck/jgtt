@@ -1,0 +1,1 @@
+import{j as o}from"./vite-client.js";const c=()=>{const e=localStorage.getItem("jgRecentlyViewedData");return console.log(e,"rvData"),(async()=>{const t=await(await fetch(window.Shopify.routes.root+"recommendations/products.json?product_id=9564517761316&limit=3&intent=related")).json();console.log(t)})(),o.jsx("div",{children:"RecentlyViewed"})};export{c as default};
