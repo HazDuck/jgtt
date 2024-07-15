@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ProductCard } from "../molecules/ProductCard";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export const ProductCardList = ({
   padding,
   rvData,

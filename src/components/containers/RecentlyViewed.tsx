@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react";
-// import getProductRecommendations from "../../utilities/getProductRecommendations";
 import { useHandleRVData } from "../../hooks/useHandleRVData";
 import { ProductCardList } from "../organisms/ProductCardList";
 
