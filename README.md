@@ -18,6 +18,10 @@
 
 - Due to time constraints I've left some TS anys in the codebase, this is not best practice and should be fixed
 
+- Tried to follow atomic design principles and used pre-existing styling to match what is already in Dawn, however a scss, tailwind etc would be a good idea going forwards
+
+- Again due to time constraints tests were omitted but this would be a good idea for critical paths
+
 ---
 
 # React + TypeScript + Vite
