@@ -6,21 +6,21 @@
 
 ## Testing
 
-- When testing, empty local storage > jgRecentlyViewedData in the browser to clear any viewed products
+- When testing, empty local storage > jgRecentlyViewedData in the browser to clear any viewed products.
 
-- Shopify is not always passing back 3 products (perhaps me spamming the endpoint while testing :D) so sometimes only x2 or x3 products are visible, another fallback might be a good idea to ensure x4 products
+- Shopify is not always passing back 3 products (perhaps me spamming the endpoint while testing :D) so sometimes only x2 or x3 products are visible, another fallback might be a good idea to ensure x4 products are always visible.
 
 ## Dev notes
 
-- npm run build and shopify theme dev -e development in two separate terminal windows
+- npm run build and shopify theme dev -e development in two separate terminal windows.
 
-- in App.tsx add the dynamic import to the components obj and the relevant script to the section to add new components. Add the data attribute of data-js-component"component name" and data-js-props"object string of props"
+- To add new components anywhere in the site: in App.tsx add the dynamic import to the components object and the add the relevant script either to the section, template or theme.liquid file. Add the data attribute of data-js-component"component name" and data-js-props"object string of props". This will allow react portals to be added anywhere across the site and a site wide state management approach can be implemented if required.
 
-- Due to time constraints I've left some TS anys in the codebase, this is not best practice and should be fixed
+- Due to time constraints I've left some TS anys in the codebase, this is not best practice and should be fixed.
 
-- Tried to follow atomic design principles and used pre-existing styling to match what is already in Dawn, however a scss, tailwind etc would be a good idea going forwards
+- Tried to follow atomic design principles and used pre-existing styling to match what is already in Dawn, however a Scss, Tailwind etc would be a good idea going forwards as the project grows in complexity.
 
-- Again due to time constraints tests were omitted but this would be a good idea for critical paths
+- Again due to time constraints tests were omitted but this would be a good idea for critical paths.
 
 ---
 
