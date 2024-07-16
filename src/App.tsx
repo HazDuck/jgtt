@@ -5,7 +5,7 @@ import { TComponent } from "./types/types";
 
 const App = () => {
   (() => {
-    console.log("APPTEST2");
+    console.log("APPTEST3");
     // @TODO: move components to a registry file
     const components: TComponent = {
       RecentlyViewed: lazy(
@@ -22,6 +22,7 @@ const App = () => {
       if (!jsComponent) {
         return;
       }
+
       const ComponentFound = components[jsComponent];
       const props = jsProps ? JSON.parse(jsProps) : {};
 

@@ -15,9 +15,9 @@ const RecentlyViewed = ({
   text_color: string;
   title: string;
 }) => {
-  console.log("RVTEST2");
-  // TODO: fix TypeError: Cannot read properties of null (reading 'useState')
+  console.log("RVTEST3");
   const rvData = useHandleRVData();
+
   return rvData.length ? (
     <div className="page-width-desktop">
       <h2 style={{ color: text_color }}>{title}</h2>
