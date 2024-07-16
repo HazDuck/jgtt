@@ -8,13 +8,13 @@
 
 - When testing, empty local storage > jgRecentlyViewedData in the browser to clear any viewed products
 
+- Shopify is not always passing back 3 products (perhaps me spamming the endpoint while testing :D) so sometimes only x2 or x3 products are visible, another fallback might be a good idea to ensure x4 products
+
 ## Dev notes
 
 - npm run build and shopify theme dev -e development in two separate terminal windows
 
-- Unfortunately I bumped into a Vite issue that I don’t have time to fix so wasn't able to dynamically import components - see wip commented out in App.tsx.
-
-- Therefore to add new components, add each component into the vite.config.ts 'input' with a corresponding reactdom.createroot
+- in App.tsx add the dynamic import to the components obj and the relevant script to the section to add new components. Add the data attribute of data-js-component"component name" and data-js-props"object string of props"
 
 - Due to time constraints I've left some TS anys in the codebase, this is not best practice and should be fixed
 
