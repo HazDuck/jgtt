@@ -14,7 +14,7 @@ const RecentlyViewed = ({
   text_color: string;
   title: string;
 }) => {
-  console.log("RVTEST4");
+  console.log("RVTEST5");
   const rvData = useHandleRVData();
   return rvData.length ? (
     <div className="page-width-desktop">

@@ -4,7 +4,7 @@ import getProductRecommendations from "../utilities/getProductRecommendations";
 
 export const useHandleRVData = () => {
   const [rvData, setRvData] = React.useState<any[]>([]);
-  console.log("useHandleRVDataTEST4");
+  console.log("useHandleRVDataTEST5");
   // @TODO: investigate why React.useeffect is required to prevent vite build error
   React.useEffect(() => {
     const fetchProductRecommendations = async (id: number, limit: number) => {

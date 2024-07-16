@@ -5,7 +5,7 @@ import { TComponent } from "./types/types";
 
 const App = () => {
   (() => {
-    console.log("APPTEST4");
+    console.log("APPTEST5");
     // @TODO: move components to a registry file
     const components: TComponent = {
       RecentlyViewed: lazy(
