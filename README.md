@@ -8,7 +8,7 @@
 
 - When testing, empty local storage > jgRecentlyViewedData in the browser to clear any viewed products.
 
-- Shopify is not always passing back 3 products (the response from Shopify's recs endpoint looks good, so perhaps its from me spamming the endpoint while testing :D) so sometimes only x2 or x3 products are visible, another fallback might be a good idea to ensure x4 products are always visible.
+- Shopify is not always passing back enough recommended products (the response from Shopify's recs endpoint looks good, so perhaps its from me spamming the endpoint while testing :D) so sometimes only x2 or x3 products are visible, another fallback might be a good idea to ensure x4 products are always visible.
 
 ## Dev notes
 
