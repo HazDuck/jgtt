@@ -1,4 +1,4 @@
-# Tech Test
+# JAQ Group
 
 ## Set up
 
