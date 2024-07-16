@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
+import React from "react";
 import getProductRecommendations from "../utilities/getProductRecommendations";
 
 export const useHandleRVData = () => {
-  const [rvData, setRvData] = useState<any[]>([]);
-
-  useEffect(() => {
+  const [rvData, setRvData] = React.useState<any[]>([]);
+  console.log("useHandleRVDataTEST");
+  // @TODO: investigate why React.useeffect is required to prevent vite build error
+  React.useEffect(() => {
     const fetchProductRecommendations = async (id: number, limit: number) => {
       return await getProductRecommendations(id, limit);
     };
